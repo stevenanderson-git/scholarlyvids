@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -24,6 +24,17 @@ def page2():
 def page(name):
     return render_template('helloworld.html', name = name)
 
+@app.get("/search_results")
+def search_results():
+    args = request.args
+    page = 'search_results.html'
+    title = 'Results for: test'
+    if args:
+        term = args.get('search')
+        return render_template(page, term=term)
+    
+
+    return render_template(page, title=title)
 
 # EOF
 # TODO: Remove debug run
