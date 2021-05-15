@@ -22,12 +22,15 @@
         <header>
             {% include 'navbar.html' %}
         </header>
-        <main class="flex-shrink-0">            
+        <main class="flex-shrink-0">
+            <div class="container">
+                {% include 'buttonrow.html' %}
+            </div>
+            
             <div class="container">
                 {% block content %}
                 {% endblock content %}
             </div>
-            
         </main>
         <footer class="footer mt-auto py-3 bg-dark">
             <div class="container">
