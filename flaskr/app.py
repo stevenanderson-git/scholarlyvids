@@ -6,9 +6,11 @@ app = Flask(__name__)
 def home():
     title = 'ScholarlyVids - The best place to rate educational videos!'
 
+    musicians = ["Bach", "Beethoven", "Mozart", "Lady Gaga", "Skrillix",
+                    "Toby Keith", "FFDP", "Maynard", "Pop-Punk"]
 
 
-    return render_template('home.html', title = title)
+    return render_template('home.html', title = title, musicians=musicians)
 
 @app.route("/page1")
 def page1():
@@ -18,6 +20,9 @@ def page1():
 def page2():
     return render_template('page2.html')
 
+@app.route("/page/<name>")
+def page(name):
+    return render_template('helloworld.html', name = name)
 
 
 # EOF
