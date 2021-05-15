@@ -5,6 +5,9 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     title = 'ScholarlyVids - The best place to rate educational videos!'
+
+
+
     return render_template('home.html', title = title)
 
 @app.route("/page1")
