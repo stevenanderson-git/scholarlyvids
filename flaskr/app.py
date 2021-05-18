@@ -36,6 +36,13 @@ def search_results():
 
     return render_template(page, title=title)
 
+@app.route("/advanced_search")
+def advanced_search():
+    page = 'advanced_search.html'
+    title = 'Advanced Search'
+
+    return render_template(page, title=title)
+
 # EOF
 # TODO: Remove debug run
 if __name__ == '__main__':
