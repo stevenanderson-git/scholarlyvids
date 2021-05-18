@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -20,10 +20,21 @@ def page1():
 def page2():
     return render_template('page2.html')
 
-@app.route("/page/<name>")
-def page(name):
-    return render_template('helloworld.html', name = name)
+@app.route("/video/<name>")
+def video(name):
+    return render_template('videoresult.html', name = name)
 
+@app.get("/search_results")
+def search_results():
+    args = request.args
+    page = 'search_results.html'
+    title = 'Search Results'
+    if args:
+        term = args.get('search')
+        return render_template(page, term=term)
+    
+
+    return render_template(page, title=title)
 
 # EOF
 # TODO: Remove debug run
