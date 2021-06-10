@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, json
 
 app = Flask(__name__)
 
@@ -22,7 +22,21 @@ def page2():
 
 @app.route("/video/<video_title>")
 def video(video_title):
-    return render_template('videoresult.html', video_title = video_title)
+    #look up info based on either video_title or video_id
+    #video id would be better if pulling from db
+    #send video data in a video_object to populate page
+
+    #create json to encapsulate video data
+    video_data = {
+        'video_title': video_title,
+        'thumb_url': 'https://via.placeholder.com/1920x1080',
+        'runtime': '1:23:45',
+        'views': 'at least 1',
+        'summary': 'long text description that will go here',
+        'transcript_link': 'someurlvalue_clickme_other_place_on_site?'
+    }
+
+    return render_template('videoresult.html', video_data=video_data)
 
 @app.get("/search_results")
 def search_results():
