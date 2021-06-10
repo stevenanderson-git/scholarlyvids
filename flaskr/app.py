@@ -58,15 +58,9 @@ def search():
 def advanced_search():
     page = 'advanced_search.html'
     title = 'Advanced Search'
-    args = request.args
-
     #TODO: meaningful categories from database categorization
     categories = ['Moon', 'Space', 'School', 'Water', 'Programming']
-
-
-    if args:
-        #term = args.get('search-term')
-        
+      
 
     return render_template(page, title=title, categories=categories)
 
