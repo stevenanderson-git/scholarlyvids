@@ -54,6 +54,10 @@ def search_results():
 def advanced_search():
     page = 'advanced_search.html'
     title = 'Advanced Search'
+    args = request.args
+    if args:
+        term = args.get('search')
+        return render_template(page, term=term)
 
     return render_template(page, title=title)
 
