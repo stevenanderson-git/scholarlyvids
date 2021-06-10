@@ -65,7 +65,7 @@ def advanced_search():
 
 
     if args:
-        term = args.get('search-term')
+        #term = args.get('search-term')
         
 
     return render_template(page, title=title, categories=categories)
