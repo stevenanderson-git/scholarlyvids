@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, json, url_for
 from werkzeug.utils import redirect
+from video import *
 
 app = Flask(__name__)
 
@@ -8,8 +9,12 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     title = 'ScholarlyVids - The best place to rate educational videos!'
-    video_list = ["Bach", "Beethoven", "Mozart", "Lady Gaga", "Skrillix",
+    video_names = ["Bach", "Beethoven", "Mozart", "Lady Gaga", "Skrillix",
                     "Toby Keith", "FFDP", "Maynard", "Pop-Punk"]
+    video_list = []
+    for name in video_names:
+        video_list.append(Video(name).data())
+
     return render_template('home.html', title = title, video_list = video_list)
 
 @app.route("/page1")
@@ -26,18 +31,10 @@ def video(video_title):
     #video id would be better if pulling from db
     #send video data in a video_object to populate page
 
-    #create json to encapsulate video data
-    video_data = {
-        'video_title': video_title,
-        'thumb_url': 'https://via.placeholder.com/1920x1080',
-        'video_url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        'runtime': '1:23:45',
-        'views': 'at least 1',
-        'summary': 'long text description that will go here',
-        'transcript_link': 'someurlvalue_clickme_other_place_on_site?'
-    }
+    # Create a video object to generalize the information being passed to page
+    v = Video(video_title)
 
-    return render_template('videopage.html', video_data=video_data)
+    return render_template('videopage.html', video_data=v.data())
 
 @app.get("/search")
 def search():
@@ -47,8 +44,9 @@ def search():
     title = 'Search Results'
     if args.get('q') != '':
         term = args.get('q')
-        video_list = ["Oranges", "Kiwi", "Interesting", "How to cat?", "Code is Life",
-                    "Why, The novel", "Ipsum, a history", "Katchup", "This is a test"]
+        video_list = [Video("Oranges").data(), Video("Kiwi").data(), Video("Interesting").data(), Video("How to cat?").data(), Video("Code is Life").data(),
+                    Video("Why, The novel").data(), Video("Ipsum, a history").data(), Video("Katchup").data(), Video("This is a test").data()]
+        print(video_list)
         return render_template(page, term=term, video_list=video_list)
     
 

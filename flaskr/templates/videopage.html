@@ -7,7 +7,7 @@
         <!--could be a carosel of images-->
         <div class="container-fluid video-thumbnail p-3">
             <!--TODO: pull images from database thumbnail-->
-            <img class="img-fluid" src="{{video_data.thumb_url}}" alt="">
+            <img class="img-fluid" src="{{url_for('static', filename=video_data.thumbnail)}}" alt="">
         </div>
         <div class="container-fluid video-details-container p-3">
             <!--Video title-->
