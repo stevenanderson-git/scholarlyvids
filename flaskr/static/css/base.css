@@ -1,7 +1,11 @@
 main > .container{
-    padding-top: 30px;
+    padding-top: 0;
 }
 
 body {
-    background: lightgray
+    background: lightgray;
+}
+
+.navbar {
+    background-color: lightblue;
 }

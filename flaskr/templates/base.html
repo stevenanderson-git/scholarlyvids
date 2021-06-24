@@ -18,20 +18,21 @@
             {% endif %}
         </title>
     </head>
-    <body class="d-flex flex-column h-100">
-        <header>
+    <body>
+        <header class="sticky-top">
             {% include 'navbar.html' %}
         </header>
+        
+
         <main class="flex-shrink-0">          
             <div class="container">
                 {% block content %}
                 {% endblock content %}
             </div>
         </main>
-        <footer class="footer mt-auto py-3 bg-dark">
-            <div class="container">
-                {% include 'footer.html' %}
-            </div>
+
+        <footer>
+            {% include 'footer.html' %}
         </footer>
        
         

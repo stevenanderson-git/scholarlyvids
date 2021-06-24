@@ -2,19 +2,19 @@
     <div class="container">
 
         {% if video_list %}
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-6">
             {% for video in video_list %}
             <div class="col">
                 <div class="card shadow-sm">
-                    
+                    <a href="{{url_for('video', video_title=video.video_title)}}" class="stretched-link"></a>
                     <img src="{{url_for('static', filename='thumbnails/gen_tech.jpg')}}" class="card-img-top" alt="{{video.video_title}}">
 
                     <div class="card-body">
-                        <p class="card-text">{{video.video_title}}</p>
+                        <p class="card-text text-center text-capitalize">{{video.video_title}}</p>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a href="{{url_for('video', video_title=video.video_title)}}" class="btn btn-lg btn-outline-secondary stretched-link">View Video</a>
+                            
                             <small class="text-muted">Video Time</small>
                         </div>
                     </div>

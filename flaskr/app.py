@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, json, url_for
 from werkzeug.utils import redirect
-from video import *
+from video import Video
 
 app = Flask(__name__)
 
@@ -8,9 +8,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    title = 'ScholarlyVids - The best place to rate educational videos!'
+    title = 'SmartVids - Artificial Intelligence Reccomends!'
     video_names = ["Bach", "Beethoven", "Mozart", "Lady Gaga", "Skrillix",
-                    "Toby Keith", "FFDP", "Maynard", "Pop-Punk"]
+                    "Toby Keith", "FFDP", "Maynard"]
     video_list = []
     for name in video_names:
         video_list.append(Video(name).data())
