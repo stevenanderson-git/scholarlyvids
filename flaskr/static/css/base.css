@@ -9,3 +9,13 @@ body {
 .navbar {
     background-color: lightblue;
 }
+
+.card{
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    margin: .5em;
+    padding: 2px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}

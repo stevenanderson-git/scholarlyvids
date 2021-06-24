@@ -7,7 +7,7 @@ class Video:
         self.video_title = video_title
         # Access database and pull the rest of data to be accessed
         # Default Thumbnail
-        self.thumbnail = 'thumbnails/gen_person.jpg'
+        self.thumbnail = 'thumbnails/gen_tech.jpg'
 
     def data(self):
     #create json to encapsulate video data
@@ -19,7 +19,8 @@ class Video:
             'runtime': '1:23:45',
             'views': 'at least 1',
             'summary': 'long text description that will go here',
-            'transcript_link': 'someurlvalue_clickme_other_place_on_site?'
+            'transcript_link': 'someurlvalue_clickme_other_place_on_site?',
+            'category': 'Technology'
         }
         return video_data
     
