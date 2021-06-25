@@ -16,6 +16,20 @@ body {
     padding: 2px;
 }
 
+.card-title{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
 .card:hover{
     transform: scale(1.05);
+    margin: 0;
+    border: 3px solid;
+    border-color: black;
+    background-color: lightblue;
+}
+
+.card:hover .card-title{
+    font-weight: bold;
 }

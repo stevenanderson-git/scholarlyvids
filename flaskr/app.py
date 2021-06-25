@@ -46,7 +46,7 @@ def search():
         term = args.get('q')
         video_list = [Video("Oranges").data(), Video("Kiwi").data(), Video("Interesting").data(), Video("How to cat?").data(), Video("Code is Life").data(),
                     Video("Why, The novel").data(), Video("Ipsum, a history").data(), Video("Katchup").data(), Video("This is a test").data()]
-        print(video_list)
+        
         return render_template(page, term=term, video_list=video_list)
     
 
