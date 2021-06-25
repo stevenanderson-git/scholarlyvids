@@ -3,7 +3,7 @@ main > .container{
 }
 
 body {
-    background: lightgray;
+    background: azure;
 }
 
 .navbar {
@@ -32,4 +32,5 @@ body {
 
 .card:hover .card-title{
     font-weight: bold;
+    color: black;
 }
