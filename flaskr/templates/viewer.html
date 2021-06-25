@@ -1,9 +1,9 @@
-<div class="container album py-5">
+<div class="container album">
     {% if video_list %}
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         {% for video in video_list %}
         <div class="col">
-            <div class="card shadow-lg">
+            <div class="card shadow-sm">
 
                 <img src="{{url_for('static', filename=video.thumbnail)}}" class="card-img-top"
                     alt="{{video.video_title}}">
