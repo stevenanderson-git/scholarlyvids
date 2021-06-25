@@ -1,35 +1,28 @@
-<div class="album py-5">
-    <div class="container">
+<div class="container album py-5">
+    {% if video_list %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+        {% for video in video_list %}
+        <div class="col">
+            <div class="card shadow-lg">
 
-        {% if video_list %}
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
-            {% for video in video_list %}
-            <div class="col">
-                <div class="card shadow-lg">
+                <img src="{{url_for('static', filename=video.thumbnail)}}" class="card-img-top"
+                    alt="{{video.video_title}}">
 
-                    <img src="{{url_for('static', filename=video.thumbnail)}}" class="card-img-top"
-                        alt="{{video.video_title}}">
+                <div class="card-body">
+                    <p class="h4 card-title">{{video.video_title}}</p>
 
-                    <div class="card-body">
-                        <p class="h4 card-title">{{video.video_title}}</p>
+                    <!--change this to have a category tag icon instead?-->
+                    <p class="card-text">{{video.category}}</p>
 
-                        <!--change this to have a category tag icon instead?-->
-                        <p class="card-text">{{video.category}}</p>
+                    <small class="text-muted">{{video.runtime}}</small>
 
-                        <small class="text-muted">{{video.runtime}}</small>
-
-                        <a href="{{url_for('video', video_title=video.video_title)}}" class="stretched-link"></a>
-                    </div>
+                    <a href="{{url_for('video', video_title=video.video_title)}}" class="stretched-link"></a>
                 </div>
             </div>
-            {% endfor %}
-
-
         </div>
-        {% endif %}
-
+        {% endfor %}
 
 
     </div>
-
+    {% endif %}
 </div>
