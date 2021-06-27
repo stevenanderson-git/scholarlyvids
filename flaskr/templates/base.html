@@ -22,17 +22,17 @@
 </head>
 
 <body>
-    <header>
+    <header class="fixed-top">
         {% include 'navbar.html' %}
     </header>
 
 
-    <main class="py-3">
+    <main>
         {% block content %}
         {% endblock content %}
     </main>
 
-    <footer class="mt-auto">
+    <footer class="container mt-auto">
         {% include 'footer.html' %}
     </footer>
 
