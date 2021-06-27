@@ -18,6 +18,23 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('page2') }}">Link 2</a>
         </li>
+        <!--TODO: Populate from AI categories, Alphabetize-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Science</a></li>
+            <li><a class="dropdown-item" href="#">Math</a></li>
+            <li><a class="dropdown-item" href="#">History</a></li>
+            <li><a class="dropdown-item" href="#">Social Studies</a></li>
+            <li><a class="dropdown-item" href="#">Language</a></li>
+            <li><a class="dropdown-item" href="#">Writing</a></li>
+            <li><a class="dropdown-item" href="#">Music</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{url_for('advanced_search')}}">Search Multiple Categories...</a></li>
+          </ul>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('advanced_search')}}">Advanced Search</a>
         </li>

@@ -1,31 +1,93 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-lg">
-    <form action="{{url_for('search')}}">
-        <div class="row mb-3">
-            <label for="search-term" class="col-sm-2 col-form-label">Search Term</label>
+
+<form class="row g-3 mb-3" action="{{url_for('search')}}">
+
+
+    <div class="col-lg">
+        <div class="row">
+            <label for="search-term" class="text-nowrap col-sm-2 col-form-label">Search Term</label>
             <div class="col-sm-10">
                 <input class="form-control" name="q" id="search-term">
             </div>
+
         </div>
-        {% if categories %}
-        <div class="row mb-3">
-            <label for="category-select" class="col-sm-2 col-form-label">Category</label>
+    </div>
+    <div class="col-lg">
+        <div class="row">
+            <label for="author-term" class="col-sm-2 col-form-label">Author</label>
             <div class="col-sm-10">
-                {% for category in categories %}
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="{{category}}" name="{{category}}">
-                    <label class="form-check-label" for="{{category}}">
-                        {{category}}
-                    </label>
-                </div>
-                {% endfor %}
+                <input class="form-control" name="author" id="author-term">
             </div>
         </div>
-        {% endif %}
+    </div>
 
 
+
+
+
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Check me out
+            </label>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    {% if categories %}
+    <div class="row mb-3">
+        <label for="category-select" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">
+            {% for category in categories %}
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{category}}" name="{{category}}">
+                <label class="form-check-label" for="{{category}}">
+                    {{category}}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!--TODO: Require at least 1 validation-->
+    <div>
         <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-</div>
+    </div>
+
+</form>
+
 {% endblock content %}
