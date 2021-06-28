@@ -13,15 +13,23 @@ main {
     background-color: lightblue;
 }
 
+.home-container{
+    width: 60%;
+}
+
 .card {
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     margin: .5em;
     padding: 3px;
+    font-size: smaller;    
 }
 
 .card-title {
-    text-align: center;
     text-transform: capitalize;
+    font-size: larger;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -35,4 +43,19 @@ main {
 .card:hover .card-title {
     font-weight: bold;
     color: black;
+}
+
+.bi {
+    padding-right: .3em;
+}
+
+.footer{
+    background: lightblue;
+}
+.footer .links > ul{
+    list-style-type: none;
+}
+
+.footer a{
+    text-decoration: none;
 }

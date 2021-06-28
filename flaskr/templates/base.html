@@ -16,18 +16,18 @@
         {% if title %}
         {{title}}
         {% else %}
-        ScholarlyVids.com
+            Ai-STEM
         {% endif %}
     </title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="fixed-top">
         {% include 'navbar.html' %}
     </header>
 
 
-    <main class="container">
+    <main class="mb-4">
         {% block content %}
         {% endblock content %}
     </main>

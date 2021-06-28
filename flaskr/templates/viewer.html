@@ -1,22 +1,20 @@
-<div class="container album mb-3">
+<div class="container home-container">
     {% if video_list %}
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2">
         {% for video in video_list %}
         <div class="col">
             <div class="card shadow-sm">
 
-                <img src="{{url_for('static', filename=video.thumbnail)}}" class="card-img-top"
-                    alt="{{video.video_title}}">
+                <img src="{{url_for('static', filename=video.thumbnail)}}" class="card-img-top rounded img-fluid"
+                    alt="{{video.video_title}} thumbnail">
 
                 <div class="card-body">
-                    <p class="h4 card-title">{{video.video_title}}</p>
+                    <p class="card-title">{{video.video_title}}</p>
 
                     <!--change this to have a category tag icon instead?-->
                     <p class="card-text">{{video.category}}</p>
 
-                    <small class="text-muted">{{video.runtime}}</small>
-
-                    <a href="{{url_for('video', video_title=video.video_title)}}" class="stretched-link"></a>
+                    <a href="{{url_for('video_page', video_id=video.video_id)}}" class="stretched-link"></a>
                 </div>
             </div>
         </div>
