@@ -7,13 +7,13 @@ app = Flask(__name__)
 video_1 = Video('The Insane Biology of: The Platypus', 'insane_biology_of_platypus.jpg', 'https://www.youtube.com/watch?v=Wh2du5SOjmY', 'Science', 1)
 video_2 = Video('The Secret Language of Trees', 'secret_language_of_trees.jpg', 'https://www.youtube.com/watch?v=9HiADisBfQ0', 'Nature', 2)
 video_3 = Video('How language shapes the way we think | Lera Boroditsky', 'thumbnail_id_3.jpg', 'https://www.youtube.com/watch?v=RKK7wGAYP6k', 'Language', 3)
-video_4= Video('Social Studies Learning Videos for Kids Compilation', 'thumbnail_id_4.jpg', 'https://www.youtube.com/watch?v=wqZRGHva1iE', 'Social Studies', 4)
-video_5 = Video('2nd Grade Math Compilation', 'thumbnail_id_5.jpg', 'https://www.youtube.com/watch?v=S2TYfrGEih4', 'Math', 5)
-video_6 = Video('Speaking Cartoon | 45 minutes Kids Dialogues | Easy conversation | Learn English for Kids', 'thumbnail_id_6.jpg', 'https://www.youtube.com/watch?v=FdlLsxR5AE0', 'Language', 6)
+video_4= Video('The Insane Engineering of the X-15', 'thumbnail_id_4.jpg', 'https://www.youtube.com/watch?v=7zR26e504uI', 'Engineering', 4)
+video_5 = Video('The essence of calculus', 'thumbnail_id_5.jpg', 'https://www.youtube.com/watch?v=WUvTyaaNkzM', 'Math', 5)
+video_6 = Video('Solar System 101 | National Geographic', 'thumbnail_id_6.jpg', 'https://www.youtube.com/watch?v=libKVRa01L8', 'Space', 6)
 video_7 = Video('Introduction to Evolution and Natural Selection', 'thumbnail_id_7.jpg', 'https://www.youtube.com/watch?v=GcjgWov7mTM&list=PL7A9646BC5110CF64', 'Biology', 7)
 video_8 = Video('Natural Selection - Crash Course Biology #14', 'thumbnail_id_8.jpg', 'https://www.youtube.com/watch?v=aTftyFboC_M', 'Biology', 8)
-video_9 = Video('DIGITECH Online Safety Compilation, Summer 2021', 'gen_tech.jpg', 'https://www.teachertube.com/videos/digitech-online-safety-compilation-summer-2021-506254', 'Social Studies', 9)
-video_10 = Video('Aurora Borealis February 18, 2014 Fairbanks, Alaska', 'gen_nature.jpg', 'https://www.teachertube.com/videos/aurora-borealis-february-18-2014-fairbanks-alaska-366466', 'Nature', 10)
+video_9 = Video('Moon 101 | National Geographic', 'thumbnail_id_9.jpg', 'https://www.youtube.com/watch?v=6AviDjR9mmo', 'Space', 9)
+video_10 = Video('Computer Networks: Crash Course Computer Science #28', 'thumbnail_id_10.jpg', 'https://www.youtube.com/watch?v=3QhU9jd03a0', 'Computer Science', 10)
 video_11 = Video('Mathematics is the queen of Sciences', 'thumbnail_id_11.jpg', 'https://www.youtube.com/watch?v=8mve0UoSxTo', 'Math', 11)
 video_12 = Video('Superhuman Geniuses (Extraordinary People Documentary) | Real Stories', 'thumbnail_id_12.jpg', 'https://www.youtube.com/watch?v=xvDuqW9SFT8', 'Music', 12)
 
@@ -57,10 +57,7 @@ def search():
     page = 'search_results.html'
     title = 'Search Results'
     if args.get('q') != '':
-        term = args.get('q')
-        video_list = [Video("Oranges").data(), Video("Kiwi").data(), Video("Interesting").data(), Video("How to cat?").data(), Video("Code is Life").data(),
-                    Video("Why, The novel").data(), Video("Ipsum, a history").data(), Video("Katchup").data(), Video("This is a test").data()]
-        
+        term = args.get('q')        
         return render_template(page, term=term, video_list=video_list)
     
 
