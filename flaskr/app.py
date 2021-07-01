@@ -4,18 +4,18 @@ from video import Video
 
 app = Flask(__name__)
 
-video_1 = Video('The Insane Biology of: The Platypus', 'insane_biology_of_platypus.jpg', 'https://www.youtube.com/watch?v=Wh2du5SOjmY', 'Science', 1)
-video_2 = Video('The Secret Language of Trees', 'secret_language_of_trees.jpg', 'https://www.youtube.com/watch?v=9HiADisBfQ0', 'Nature', 2)
-video_3 = Video('How language shapes the way we think | Lera Boroditsky', 'thumbnail_id_3.jpg', 'https://www.youtube.com/watch?v=RKK7wGAYP6k', 'Language', 3)
-video_4= Video('The Insane Engineering of the X-15', 'thumbnail_id_4.jpg', 'https://www.youtube.com/watch?v=7zR26e504uI', 'Engineering', 4)
+video_1 = Video('Plant Parts and Functions | First and Second Grade Science Lesson For Kids', 'thumbnail_id_1.jpg', 'https://www.youtube.com/watch?v=18amLZ9vfG8', 'Biology', 1)
+video_2 = Video('“Hello, world” from scratch on a 6502 — Part 1', 'thumbnail_id_2.jpg', 'https://www.youtube.com/watch?v=LnzuMJLZRdU', 'Computer Science', 2)
+video_3 = Video('Moon Phases: Crash Course Astronomy #4', 'thumbnail_id_3.jpg', 'https://www.youtube.com/watch?v=AQ5vty8f9Xc', 'Astronomy', 3)
+video_4= Video('How do Wings generate LIFT ?', 'thumbnail_id_4.jpg', 'https://www.youtube.com/watch?v=w78JT6azrZU', 'Engineering', 4)
 video_5 = Video('The essence of calculus', 'thumbnail_id_5.jpg', 'https://www.youtube.com/watch?v=WUvTyaaNkzM', 'Math', 5)
 video_6 = Video('Solar System 101 | National Geographic', 'thumbnail_id_6.jpg', 'https://www.youtube.com/watch?v=libKVRa01L8', 'Space', 6)
 video_7 = Video('Introduction to Evolution and Natural Selection', 'thumbnail_id_7.jpg', 'https://www.youtube.com/watch?v=GcjgWov7mTM&list=PL7A9646BC5110CF64', 'Biology', 7)
 video_8 = Video('Natural Selection - Crash Course Biology #14', 'thumbnail_id_8.jpg', 'https://www.youtube.com/watch?v=aTftyFboC_M', 'Biology', 8)
-video_9 = Video('Moon 101 | National Geographic', 'thumbnail_id_9.jpg', 'https://www.youtube.com/watch?v=6AviDjR9mmo', 'Space', 9)
+video_9 = Video('Types of sentences - Declarative, Imperative, Interrogative & Exclamatory | English Grammar for kids', 'thumbnail_id_9.jpg', 'https://www.youtube.com/watch?v=mZBWzTlrMAU&list=PLM_WFJpONPKQX3qNXUj1Uck7IR9XyHq51&index=34', 'Language', 9)
 video_10 = Video('Computer Networks: Crash Course Computer Science #28', 'thumbnail_id_10.jpg', 'https://www.youtube.com/watch?v=3QhU9jd03a0', 'Computer Science', 10)
 video_11 = Video('Mathematics is the queen of Sciences', 'thumbnail_id_11.jpg', 'https://www.youtube.com/watch?v=8mve0UoSxTo', 'Math', 11)
-video_12 = Video('Superhuman Geniuses (Extraordinary People Documentary) | Real Stories', 'thumbnail_id_12.jpg', 'https://www.youtube.com/watch?v=xvDuqW9SFT8', 'Music', 12)
+video_12 = Video('Bridge Engineering Basics', 'thumbnail_id_12.jpg', 'https://www.youtube.com/watch?v=SbCVRr5eANA', 'Civil Engineering', 12)
 
 
 video_list = [video_1, video_2, video_3, video_4, video_5, video_6, video_7, video_8, video_9, video_10, video_11, video_12]
@@ -68,7 +68,7 @@ def advanced_search():
     page = 'advanced_search.html'
     title = 'Advanced Search'
     #TODO: meaningful categories from database categorization
-    categories = ['Science', 'Math', 'History', 'Social Studies', 'Language', 'Writing', 'Music']
+    categories = ['Science', 'Math', 'History', 'Social Studies', 'Language', 'Writing', 'Music', 'Engineering']
     subcategories = ['subcategory 1', 'subcategory 2', 'subcategory 3', 'subcategory 4', 'subcategory 5']
       
 
