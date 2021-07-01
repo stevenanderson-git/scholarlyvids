@@ -1,10 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="{{ url_for('home') }}">
-      <h3><img src="{{ url_for('static', filename='images/sv_logo.PNG') }}" width="80" height="30"
-          class="d-inline-block align-top" alt="">
-        iSTEM
-      </h3>
+      <img src="{{ url_for('static', filename='images/sv_logo_v2.png') }}" class="d-inline-block align-top" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +18,8 @@
         </li>
         <!--TODO: Populate from AI categories, Alphabetize-->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Categories
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -32,7 +30,9 @@
             <li><a class="dropdown-item" href="#">Language</a></li>
             <li><a class="dropdown-item" href="#">Writing</a></li>
             <li><a class="dropdown-item" href="#">Music</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="{{url_for('advanced_search')}}">Search Multiple Categories...</a></li>
           </ul>
         </li>
