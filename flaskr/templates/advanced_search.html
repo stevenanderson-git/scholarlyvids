@@ -1,31 +1,58 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-lg">
-    <form action="{{url_for('search')}}">
-        <div class="row mb-3">
-            <label for="search-term" class="col-sm-2 col-form-label">Search Term</label>
+
+<form class="row g-3 m-3" action="{{url_for('search')}}">
+
+
+    <div class="col-lg mb-3">
+        <div class="row">
+            <label for="search-term" class="text-nowrap col-sm-2 col-form-label">Search Term</label>
             <div class="col-sm-10">
                 <input class="form-control" name="q" id="search-term">
             </div>
+
         </div>
-        {% if categories %}
-        <div class="row mb-3">
-            <label for="category-select" class="col-sm-2 col-form-label">Category</label>
+    </div>
+    <div class="col-lg mb-3">
+        <div class="row">
+            <label for="author-term" class="col-sm-2 col-form-label">Author</label>
             <div class="col-sm-10">
-                {% for category in categories %}
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="{{category}}" name="{{category}}">
-                    <label class="form-check-label" for="{{category}}">
-                        {{category}}
-                    </label>
-                </div>
-                {% endfor %}
+                <input class="form-control" name="author" id="author-term">
             </div>
         </div>
-        {% endif %}
+    </div>
 
 
+    {% if categories %}
+    <div class="row">
+        <label for="category-select" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm">
+            {% for category in categories %}
+            <div class="form-check col-sm">
+                <input class="form-check-input" type="checkbox" value="" id="{{category}}" name="{{category}}">
+                <label class="form-check-label" for="{{category}}">
+                    {{category}}
+                </label>
+                    {% for subcategory in subcategories %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="{{subcategory}}"
+                            name="{{subcategory}}">
+                        <label class="form-check-label" for="{{subcategory}}">
+                            {{subcategory}}
+                        </label>
+                    </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!--TODO: Require at least 1 validation-->
+    <div>
         <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-</div>
+    </div>
+
+</form>
+
 {% endblock content %}

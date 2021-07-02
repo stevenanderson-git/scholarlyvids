@@ -1,56 +1,60 @@
 {% extends 'base.html' %}
 {% block content %}
-
-{% if video_data %}
-<div class="section bg-dark text-light p-5">
-    <div class="container d-md-flex p-2">
-        <!--could be a carosel of images-->
-        <div class="container-fluid video-thumbnail p-3">
-            <!--TODO: pull images from database thumbnail-->
-            <img class="img-fluid" src="{{video_data.thumb_url}}" alt="">
-        </div>
-        <div class="container-fluid video-details-container p-3">
-            <!--Video title-->
-            <h2 class="text-md-center video-title">
-                {{video_data.video_title}}
-            </h2>
-            <div class="video-stats">
-                <ul>
-                    <li>
-                        <label name="runtime">Runtime:</label>
-                        {{video_data.runtime}}
-                    </li>
-                    <li>
-                        <label name="views">Views:</label>
-                        {{video_data.views}}
-                    </li>
-                    <li>
-                        <label name="summary">Summary:</label>
-                        {{video_data.summary}}
-                    </li>
-                    <li>
-                        <label name="transcript_link">transcript link?:</label>
-                        <a href="#" target="">{{video_data.transcript_link}}</a>
-                    </li>
-                    <li>
-                        <label name="video_url">Video URL: </label>
-                        <a href="{{video_data.video_url}}" target="_blank">{{video_data.video_url}}</a>
-                    </li>
-                </ul>
+<div class="container">
+    {% if video_data %}
+    <div class="section bg-dark text-light p-5">
+        <div class="container d-md-flex p-2">
+            <!--could be a carosel of images-->
+            <div class="container-fluid video-thumbnail p-3">
+                <!--TODO: pull images from database thumbnail-->
+                <img class="img-fluid" src="{{url_for('static', filename=video_data.thumbnail)}}" alt="">
+            </div>
+            <div class="container-fluid video-details-container p-3">
+                <!--Video title-->
+                <h2 class="text-md-center video-title">
+                    {{video_data.video_title}}
+                </h2>
+                <div class="video-stats">
+                    <ul>
+                        <li>
+                            <label name="runtime">Runtime:</label>
+                            {{video_data.runtime}}
+                        </li>
+                        <li>
+                            <label name="views">Views:</label>
+                            {{video_data.views}}
+                        </li>
+                        <li>
+                            <label name="category">Category:</label>
+                            {{video_data.category}}
+                        </li>
+                        <li>
+                            <label name="summary">Summary:</label>
+                            {{video_data.summary}}
+                        </li>
+                        <li>
+                            <label name="transcript_link">transcript link?:</label>
+                            <a href="#" target="">{{video_data.transcript_link}}</a>
+                        </li>
+                        <li>
+                            <label name="video_url">Video URL: </label>
+                            <a href="{{video_data.video_url}}" target="_blank">{{video_data.video_url}}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="section p-5">
-    <p>Related videos?</p>
-    <p>Small card-viewer/carosel will scroll here></p>
+    <div class="section p-5">
+        <p>Related videos?</p>
+        <p>Small card-viewer/carosel will scroll here></p>
+    </div>
+    {% else %}
+    <!--TODO: Implement Error?-->
+    <div class="no-video-data-error">
+        No video data found
+    </div>
+    {% endif %}
 </div>
-{% else %}
-<!--TODO: Implement Error?-->
-<div class="no-video-data-error">
-    No video data found
-</div>
-{% endif %}
-
 {% endblock content %}

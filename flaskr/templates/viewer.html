@@ -1,38 +1,26 @@
-<div class="album py-5">
-    <div class="container">
+<div class="container home-container">
+    {% if video_list %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2">
+        {% for video in video_list %}
+        <div class="col">
+            <div class="card shadow-sm">
 
-        {% if video_list %}
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% for video_title in video_list %}
-            <div class="col">
-                <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Thumbnail</text>
-                    </svg>
+                <img src="{{url_for('static', filename=video.thumbnail)}}" class="card-img-top rounded img-fluid"
+                    alt="{{video.video_title}} thumbnail">
 
-                    <div class="card-body">
-                        <p class="card-text">{{video_title}}</p>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="{{url_for('video', video_title=video_title)}}" class="btn btn-lg btn-outline-secondary stretched-link">View Video</a>
-                            <small class="text-muted">Video Time</small>
-                        </div>
-                    </div>
+                <div class="card-body">
+                    <p class="card-title">{{video.video_title}}</p>
+
+                    <!--change this to have a category tag icon instead?-->
+                    <p class="card-text">{{video.category}}</p>
+
+                    <a href="{{url_for('video_page', video_id=video.video_id)}}" class="stretched-link"></a>
                 </div>
             </div>
-            {% endfor %}
-
-
         </div>
-        {% endif %}
-
+        {% endfor %}
 
 
     </div>
-
+    {% endif %}
 </div>

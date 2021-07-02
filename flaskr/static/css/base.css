@@ -1,7 +1,66 @@
-main > .container{
-    padding-top: 30px;
+body {
+    background: azure;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-body {
-    background: lightgray
+main {
+    padding-top: 5em;
+}
+
+.navbar {
+    background-color: lightblue;
+}
+
+.brand-image{
+    width: 120px;
+    height: 60px;
+} 
+
+.home-container{
+    width: auto;
+}
+
+.card {
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    margin: .5em;
+    padding: 3px;
+    font-size: smaller;    
+}
+
+.card-title {
+    text-transform: capitalize;
+    font-size: larger;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    margin: 0;
+    border: 3px solid;
+    border-color: black;
+    background-color: lightblue;
+}
+
+.card:hover .card-title {
+    font-weight: bold;
+    color: black;
+}
+
+.bi {
+    padding-right: .3em;
+}
+
+.footer{
+    background: lightblue;
+}
+.footer .links > ul{
+    list-style-type: none;
+}
+
+.footer a{
+    text-decoration: none;
 }
