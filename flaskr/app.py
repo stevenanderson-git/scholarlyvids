@@ -4,18 +4,20 @@ from video import Video
 
 app = Flask(__name__)
 
-video_1 = Video('Plant Parts and Functions | First and Second Grade Science Lesson For Kids', 'thumbnail_id_1.jpg', 'https://www.youtube.com/watch?v=18amLZ9vfG8', 'Biology', 1)
-video_2 = Video('“Hello, world” from scratch on a 6502 — Part 1', 'thumbnail_id_2.jpg', 'https://www.youtube.com/watch?v=LnzuMJLZRdU', 'Computer Science', 2)
-video_3 = Video('Moon Phases: Crash Course Astronomy #4', 'thumbnail_id_3.jpg', 'https://www.youtube.com/watch?v=AQ5vty8f9Xc', 'Astronomy', 3)
-video_4= Video('How do Wings generate LIFT ?', 'thumbnail_id_4.jpg', 'https://www.youtube.com/watch?v=w78JT6azrZU', 'Engineering', 4)
-video_5 = Video('The essence of calculus', 'thumbnail_id_5.jpg', 'https://www.youtube.com/watch?v=WUvTyaaNkzM', 'Math', 5)
-video_6 = Video('Solar System 101 | National Geographic', 'thumbnail_id_6.jpg', 'https://www.youtube.com/watch?v=libKVRa01L8', 'Space', 6)
-video_7 = Video('Introduction to Evolution and Natural Selection', 'thumbnail_id_7.jpg', 'https://www.youtube.com/watch?v=GcjgWov7mTM&list=PL7A9646BC5110CF64', 'Biology', 7)
-video_8 = Video('Natural Selection - Crash Course Biology #14', 'thumbnail_id_8.jpg', 'https://www.youtube.com/watch?v=aTftyFboC_M', 'Biology', 8)
-video_9 = Video('Types of sentences - Declarative, Imperative, Interrogative & Exclamatory | English Grammar for kids', 'thumbnail_id_9.jpg', 'https://www.youtube.com/watch?v=mZBWzTlrMAU&list=PLM_WFJpONPKQX3qNXUj1Uck7IR9XyHq51&index=34', 'Language', 9)
-video_10 = Video('Computer Networks: Crash Course Computer Science #28', 'thumbnail_id_10.jpg', 'https://www.youtube.com/watch?v=3QhU9jd03a0', 'Computer Science', 10)
-video_11 = Video('Mathematics is the queen of Sciences', 'thumbnail_id_11.jpg', 'https://www.youtube.com/watch?v=8mve0UoSxTo', 'Math', 11)
-video_12 = Video('Bridge Engineering Basics', 'thumbnail_id_12.jpg', 'https://www.youtube.com/watch?v=SbCVRr5eANA', 'Civil Engineering', 12)
+cstring='Math 1st Grade'
+
+video_1 = Video('Fact Family Triangles - Addition and Subtraction Cartoon | Math for 1st Grade | Kids Academy', 'thumbnail_id_1.jpg', 'https://www.youtube.com/watch?v=9IhZDEffyTk&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn', cstring, 1)
+video_2 = Video('Comparing Numbers: 2-Digit Numbers | Math for 1st Grade | Kids Academy', 'thumbnail_id_2.jpg', 'https://www.youtube.com/watch?v=Fui9VPoiIWc&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=4', cstring, 2)
+video_3 = Video('Input and Output Tables - Find the Rule | Math for 1st Grade | Kids Academy', 'thumbnail_id_3.jpg', 'https://www.youtube.com/watch?v=nkIUE_sK4zQ&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=5', cstring, 3)
+video_4 = Video('Reading Bar Graph for Kids | Measurement and Data | Math for 1st Grade | Kids Academy', 'thumbnail_id_4.jpg', 'https://www.youtube.com/watch?v=LpdMMdU7IGM&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=6', cstring, 4)
+video_5 = Video('Bar Graphs for Kids | Math for 2nd Grade | Kids Academy', 'thumbnail_id_5.jpg', 'https://www.youtube.com/watch?v=lGZSfupOKB8&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=7', cstring, 5)
+video_6 = Video('Solving Word Problems | Math for 1st Grade | Kids Academy', 'thumbnail_id_6.jpg', 'https://www.youtube.com/watch?v=cqtXCzNEz0U&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=8', cstring, 6)
+video_7 = Video('Base Ten Blocks - Comparing Numbers | Math for 1st Grade | Kids Academy', 'thumbnail_id_7.jpg', 'https://www.youtube.com/watch?v=zU5LwvJJt5Y&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=9', cstring, 7)
+video_8 = Video('Learn Addition and Counting | Mental Math for 1st Grade | Kids Academy', 'thumbnail_id_8.jpg', 'https://www.youtube.com/watch?v=J8PQNQ2rYFU&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=10', cstring, 8)
+video_9 = Video('Skip Counting by 10 for Kids | How to Skip Count | Kids Academy', 'thumbnail_id_9.jpg', 'https://www.youtube.com/watch?v=8_aYQrFIKeU&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=11', cstring, 9)
+video_10 = Video('2 Dimensional Shapes: Vertices | Math for 1st Grade | Kids Academy', 'thumbnail_id_10.jpg', 'https://www.youtube.com/watch?v=Jyh15pyQ1xc&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=12', cstring, 10)
+video_11 = Video('Fact Families - Addition and Subtraction | Math for 1st Grade | Kids Academy', 'thumbnail_id_11.jpg', 'https://www.youtube.com/watch?v=76Ex6Z5DcN4&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=13', cstring, 11)
+video_12 = Video('Counting with Tally Marks and Tally Charts | Math for Kindergarten & 1st Grade | Kids Academy', 'thumbnail_id_12.jpg', 'https://www.youtube.com/watch?v=-pEA3w8SQws&list=PLiMIqKsOLxPxJEYh-CFNMlQjPx3fVKZOn&index=3', cstring, 12)
 
 
 video_list = [video_1, video_2, video_3, video_4, video_5, video_6, video_7, video_8, video_9, video_10, video_11, video_12]
